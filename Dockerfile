@@ -5,6 +5,6 @@ RUN pip install requests
 ADD . /src
 
 # UDP
-EXPOSE 1812
+EXPOSE 1812/UDP
 
 CMD ["python", "/src/proxy.py"]
