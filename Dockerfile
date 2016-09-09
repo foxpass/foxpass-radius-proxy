@@ -7,4 +7,4 @@ ADD . /src
 # UDP
 EXPOSE 1812/UDP
 
-CMD ["python", "/src/proxy.py"]
+CMD ["python", "/src/foxpass-radius-proxy.py"]
