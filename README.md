@@ -47,3 +47,41 @@ The proxy can be easily deployed as a container.
 docker build -t foxpass-radius-proxy .
 docker run --net host foxpass-radius-proxy
 ```
+
+SysV
+=====
+
+Script installation
+------------
+Install the start script
+```
+sudo mv sysv/foxpass-radius-proxy /etc/init.d/foxpass-radius-proxy
+```
+
+Script usage
+------------
+
+### Start ###
+
+Starts the app.
+
+    /etc/init.d/foxpass-radius-proxy start
+
+### Stop ###
+
+Stops the app.
+
+    /etc/init.d/foxpass-radius-proxy stop
+
+### Restart ###
+
+Restarts the app.
+
+    /etc/init.d/foxpass-radius-proxy restart
+
+### Status ###
+
+Tells you whether the app is running. Exits with _0_ if it is and _1_
+otherwise.
+
+    /etc/init.d/foxpass-radius-proxy status
