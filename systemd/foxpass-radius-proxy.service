@@ -1,0 +1,13 @@
+[Unit]
+Description=Foxpass RADIUS proxy
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python /usr/local/bin/foxpass-radius-proxy.py
+Restart=always
+Type=simple
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
