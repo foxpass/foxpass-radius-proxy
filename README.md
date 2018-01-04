@@ -86,46 +86,46 @@ otherwise.
 
     /etc/init.d/foxpass-radius-proxy status
 
-    Systemd
-    =====
+Systemd
+=====
 
-    Script installation
-    ------------
-    Install the control script
-    ```
-    sudo mv systemd/foxpass-radius-proxy.service /lib/systemd/system/
-    sudo systemctl enable foxpass-radius-proxy.service
-    ```
+Script installation
+------------
+Install the control script
+```
+sudo mv systemd/foxpass-radius-proxy.service /lib/systemd/system/
+sudo systemctl enable foxpass-radius-proxy.service
+```
 
-    Script usage
-    ------------
+Script usage
+------------
 
-    ### Start ###
+### Start ###
 
-    Starts the app.
+Starts the app.
 
-          sudo systemctl start foxpass-radius-proxy
+      sudo systemctl start foxpass-radius-proxy
 
-    ### Stop ###
+### Stop ###
 
-    Stops the app.
+Stops the app.
 
-          sudo systemctl stop foxpass-radius-proxy
+      sudo systemctl stop foxpass-radius-proxy
 
-    ### Restart ###
+### Restart ###
 
-    Restarts the app.
+Restarts the app.
 
-          sudo systemctl restart foxpass-radius-proxy
+      sudo systemctl restart foxpass-radius-proxy
 
-    ### Status ###
+### Status ###
 
-    Tells you some statistics about the process and its current state.
+Tells you some statistics about the process and its current state.
 
-          sudo systemctl status foxpass-radius-proxy
+      sudo systemctl status foxpass-radius-proxy
 
-    ### Logs ###
+### Logs ###
 
-    Messaging handled by journald; access the output using journal
+Messaging handled by journald; access the output using journal
 
-          journalctl -u foxpass-radius-proxy.service
+      journalctl -u foxpass-radius-proxy.service
