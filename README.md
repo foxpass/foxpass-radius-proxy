@@ -85,3 +85,47 @@ Tells you whether the app is running. Exits with _0_ if it is and _1_
 otherwise.
 
     /etc/init.d/foxpass-radius-proxy status
+
+Systemd
+=====
+
+Script installation
+------------
+Install the control script
+```
+sudo mv systemd/foxpass-radius-proxy.service /lib/systemd/system/
+sudo systemctl enable foxpass-radius-proxy.service
+```
+
+Script usage
+------------
+
+### Start ###
+
+Starts the app.
+
+      sudo systemctl start foxpass-radius-proxy
+
+### Stop ###
+
+Stops the app.
+
+      sudo systemctl stop foxpass-radius-proxy
+
+### Restart ###
+
+Restarts the app.
+
+      sudo systemctl restart foxpass-radius-proxy
+
+### Status ###
+
+Tells you some statistics about the process and its current state.
+
+      sudo systemctl status foxpass-radius-proxy
+
+### Logs ###
+
+Messaging handled by journald; access the output using journal
+
+      journalctl -u foxpass-radius-proxy.service
