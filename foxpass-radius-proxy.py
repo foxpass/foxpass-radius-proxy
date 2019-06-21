@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 # Copyright (c) 2015-present, Foxpass, Inc.
 # All rights reserved.
 #
@@ -37,24 +39,24 @@ def run_proxy_server(port):
     # start listening
     sock.bind(('0.0.0.0', port))
 
-    print "Listening on port %d" % (port,)
+    print("Listening on port %d" % (port,))
 
     while True:
         # read data
         raw_data, address = sock.recvfrom(1024)
-        print 'received %d bytes from %s' % (len(raw_data), address)
+        print('received %d bytes from %s' % (len(raw_data), address))
 
         try:
             # pass data over to server
             resp = requests.post(url, data=raw_data)
 
             if resp.status_code != 200:
-                print "error"
-                print resp.text
+                print("error")
+                print(resp.text)
                 continue 
 
             sock.sendto(resp.content, address)
-            print 'sent %d bytes to %s' % (len(resp.content), address)
+            print('sent %d bytes to %s' % (len(resp.content), address))
         except:
             traceback.print_exc()
 
