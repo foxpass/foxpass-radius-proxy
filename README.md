@@ -23,12 +23,12 @@ If that command also fails, you might need to do `sudo apt-get install python-pi
 
 Once it starts up, install it
 ```
-sudo mv foxpass-radius-proxy.py /usr/local/bin
+sudo cp foxpass-radius-proxy.py /usr/local/bin
 ```
 
 And then install the upstart script
 ```
-sudo mv upstart/foxpass-radius-proxy.conf /etc/init
+sudo cp upstart/foxpass-radius-proxy.conf /etc/init
 ```
 
 And then start it
@@ -55,7 +55,7 @@ Script installation
 ------------
 Install the start script
 ```
-sudo mv sysv/foxpass-radius-proxy /etc/init.d/foxpass-radius-proxy
+sudo cp sysv/foxpass-radius-proxy /etc/init.d/foxpass-radius-proxy
 ```
 
 Script usage
@@ -93,7 +93,7 @@ Script installation
 ------------
 Install the control script
 ```
-sudo mv systemd/foxpass-radius-proxy.service /lib/systemd/system/
+sudo cp systemd/foxpass-radius-proxy.service /lib/systemd/system/
 sudo systemctl enable foxpass-radius-proxy.service
 ```
 
