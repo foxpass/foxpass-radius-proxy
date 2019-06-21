@@ -32,29 +32,28 @@ SERVER = 'https://api.foxpass.com'
 def run_proxy_server(port):
     # create socket & establish verification url
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    url = '%s/radius/auth/' % (SERVER,)
+    url = '{}/radius/auth/'.format(SERVER)
 
     # start listening
     sock.bind(('0.0.0.0', port))
 
-    print "Listening on port %d" % (port,)
+    print('Listening on port {}'.format(port))
 
     while True:
         # read data
         raw_data, address = sock.recvfrom(1024)
-        print 'received %d bytes from %s' % (len(raw_data), address)
+        print('received {} bytes from {}'.format(len(raw_data), address))
 
         try:
             # pass data over to server
             resp = requests.post(url, data=raw_data)
 
             if resp.status_code != 200:
-                print "error"
-                print resp.text
+                print('error {}: {}'.format(resp.status_code, resp.text))
                 continue 
 
             sock.sendto(resp.content, address)
-            print 'sent %d bytes to %s' % (len(resp.content), address)
+            print('sent {} bytes to {}'.foramt(len(resp.content), address))
         except:
             traceback.print_exc()
 
