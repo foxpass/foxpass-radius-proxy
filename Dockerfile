@@ -1,4 +1,4 @@
-FROM python:2.7.11-alpine
+FROM python:3.6-alpine3.8
 
 RUN pip install requests
 

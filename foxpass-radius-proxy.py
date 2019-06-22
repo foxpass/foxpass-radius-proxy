@@ -31,6 +31,7 @@ import traceback
 LISTEN_PORT = 1812
 SERVER = 'https://api.foxpass.com'
 
+
 def run_proxy_server(port):
     # create socket & establish verification url
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -52,11 +53,11 @@ def run_proxy_server(port):
 
             if resp.status_code != 200:
                 print('error {}: {}'.format(resp.status_code, resp.text))
-                continue 
+                continue
 
             sock.sendto(resp.content, address)
-            print('sent {} bytes to {}'.foramt(len(resp.content), address))
-        except:
+            print('sent {} bytes to {}'.format(len(resp.content), address))
+        except Exception:
             traceback.print_exc()
 
 
