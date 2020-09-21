@@ -21,7 +21,10 @@ You might need to run `sudo pip install requests` first.
 
 If that command also fails, you might need to do `sudo apt-get install python-pip` to get pip.
 
-Once it starts up, install it
+Once it starts up, install set it up to start automatically.
+
+Upstart (Ubuntu before 17.10)
+=====
 ```
 sudo cp foxpass-radius-proxy.py /usr/local/bin
 ```
@@ -86,7 +89,7 @@ otherwise.
 
     /etc/init.d/foxpass-radius-proxy status
 
-Systemd
+Systemd (Ubuntu 17.10 and onwards)
 =====
 
 Script installation
