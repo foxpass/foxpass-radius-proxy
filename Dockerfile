@@ -1,4 +1,4 @@
-FROM python:3.9.10-alpine3.15
+FROM python:3.9.12-alpine3.15
 
 RUN pip install requests
 
