@@ -29,21 +29,21 @@ import requests
 import socket
 import traceback
 
-os.environ.setdefault('LISTEN_PORT', 1812)
-os.environ.setdefault('SERVER', 'https://api.foxpass.com')
+os.environ.setdefault('LISTEN_PORT', '1812')
+os.environ.setdefault('API_HOST', 'https://api.foxpass.com')
 
 LISTEN_PORT = int(os.environ.get('LISTEN_PORT'))
-SERVER = os.environ.get('SERVER')
+API_HOST = os.environ.get('API_HOST')
 
-def run_proxy_server(port):
+def run_proxy_server():
     # create socket & establish verification url
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    url = '{}/radius/auth/'.format(SERVER)
+    url = '{}/radius/auth/'.format(API_HOST)
 
     # start listening
-    sock.bind(('0.0.0.0', port))
+    sock.bind(('0.0.0.0', LISTEN_PORT))
 
-    print('Listening on port {}'.format(port))
+    print('Listening on port {}'.format(LISTEN_PORT))
 
     while True:
         # read data
@@ -65,4 +65,4 @@ def run_proxy_server(port):
 
 
 if __name__ == '__main__':
-    run_proxy_server(LISTEN_PORT)
+    run_proxy_server()
