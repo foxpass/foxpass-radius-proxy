@@ -24,13 +24,16 @@ from __future__ import print_function
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import os
 import requests
 import socket
 import traceback
 
-LISTEN_PORT = 1812
-SERVER = 'https://api.foxpass.com'
+os.environ.setdefault('LISTEN_PORT', 1812)
+os.environ.setdefault('SERVER', 'https://api.foxpass.com')
 
+LISTEN_PORT = int(os.environ.get('LISTEN_PORT'))
+SERVER = os.environ.get('SERVER')
 
 def run_proxy_server(port):
     # create socket & establish verification url
