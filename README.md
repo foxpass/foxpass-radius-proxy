@@ -5,7 +5,7 @@ This proxy supports regular, plain, basic RADIUS only. No EAP.
 
 All
 ===
-Create a Radius Client (on this page: https://www.foxpass.com/settings/radclients/) from the proxy's *public* ip address. Note the shared secret.
+Create a RADIUS Client (on this page: https://console.foxpass.com/settings/radius/) from the proxy's *public* ip address. Note the shared secret.
 
 Configure your endpoint to point to this server's IP address (usually the internal address) on pot 1812, using the shared secret from above.
 
